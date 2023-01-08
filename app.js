@@ -1,5 +1,3 @@
-const http = require("http");
-
 const express = require("express"); // space to separate 3rd party packages (just styling)
 
 const app = express();
@@ -15,8 +13,6 @@ app.use((req, res, next) => {
   // ... send response here (note: would not be a next middleware in-line (no default response in express))
 });
 
-const server = http.createServer(app);
-
-server.listen(3000);
+app.listen(3000); // no longer need to import http and create the server like before
 
 // major benefit of express --> middleware
