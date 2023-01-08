@@ -11,7 +11,8 @@ app.use((req, res, next) => {
 
 app.use((req, res, next) => {
   console.log("In another middleware");
-  // ... send response here
+  res.send("<h1>Hello from Express</h1>"); // do nott need to set headers ourselves when using Express
+  // ... send response here (note: would not be a next middleware in-line (no default response in express))
 });
 
 const server = http.createServer(app);
