@@ -1,9 +1,11 @@
-const http = require('http');
+const http = require("http");
 
-const routes = require('./routes');
+const express = require("express"); // space to separate 3rd party packages (just styling)
 
-console.log(routes.someText);
+const app = express();
 
-const server = http.createServer(routes.handler);
+console.log(app);
+
+const server = http.createServer();
 
 server.listen(3000);
