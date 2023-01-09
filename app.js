@@ -9,9 +9,10 @@ const shopRoutes = require("./routes/shop"); // order of the imports does not ma
 app.use(bodyParser.urlencoded({ extended: false })); // will not parse all bodies (may at times have to use a different parser)
 
 app.use(adminRoutes);
-
 app.use(shopRoutes); // this order matters
 
-app.listen(3200); // no longer need to import http and create the server like before
+app.use("/", (req, res, next) => {
+  res.status(404).send("<h1>Page not found</h1>"); // note how we changed a method before send
+});
 
-// major benefit of express --> middleware
+app.listen(3200);

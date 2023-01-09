@@ -10,12 +10,9 @@ router.get("/add-product", (req, res, next) => {
 });
 
 router.post("/product", (req, res, next) => {
-  // will now only trigger on incoming post requests
   console.log("about to redirect");
   console.log("request body: ", req.body);
   res.redirect("/"); // note the redirect method added on response by express
 });
 
 module.exports = router;
-
-// note the convention for organizing and naming routes
