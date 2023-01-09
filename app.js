@@ -8,7 +8,7 @@ const shopRoutes = require("./routes/shop"); // order of the imports does not ma
 
 app.use(bodyParser.urlencoded({ extended: false })); // will not parse all bodies (may at times have to use a different parser)
 
-app.use(adminRoutes);
+app.use("/admin", adminRoutes);
 app.use(shopRoutes); // this order matters
 
 app.use("/", (req, res, next) => {
